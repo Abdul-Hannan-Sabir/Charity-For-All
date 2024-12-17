@@ -1,0 +1,119 @@
+
+
+@media(max-width:800px){
+    .navbar .items,
+    .navbar .btn{
+        display: none;
+    }
+    .navbar .bar{
+        display: block;
+    }
+    .drop{
+        display: block;
+    }
+    .headingDonate div h3{
+        font-size: x-large;
+       padding-top: 7px;
+        
+      }
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .footer-links {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+}
+@media(max-width: 576px){
+    .drop{
+        left: 2rem;
+        width: unset;
+    }
+    .cont h3{
+        font-size: large;
+
+    }
+    footer {
+        padding: 30px 10px;
+    }
+  
+    .footer-container .footer-links a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+  
+    .footer-bottom {
+        font-size: 12px;
+    }
+
+    .get-involved h2 {
+        font-size: 1.8rem;
+      }
+    
+      .get-involved p {
+        font-size: 1rem;
+      }
+    
+      .card {
+        width: 90%; 
+      }
+
+}
+
+@media (max-width: 600px) {
+    .donation-options {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .donation-options button, .donation-options input {
+      width: 90%;
+    }
+    .headingDonate div h3{
+        font-size: 1.5rem;
+        
+      }
+    .home{
+        height: 50vh;
+    }  
+    
+  }
+  @media screen and (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2em;
+    }
+  
+    .hero-section p {
+      font-size: 1em;
+    }
+  
+    .content1 h2 {
+      font-size: 1.8em;
+    }
+  
+    .content1 p {
+      font-size: 1em;
+    }
+  
+    
+
+    .get-involved h2 {
+        font-size: 2rem;
+      }
+    
+      .get-involved p {
+        font-size: 1.1rem;
+      }
+    
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+    
+      .card {
+        width: 80%;  
+      }
+  }

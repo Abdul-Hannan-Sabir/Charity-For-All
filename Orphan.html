@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Charity For All</title>
+  <link  rel="stylesheet" href="Project.css">
+        <link  rel="stylesheet" href="media.css">
+</head>
+<body style="background:url(or.webp);">
+    <section class="Donation-section">
+  <div class="containerD">
+    <h1>Give Love, Brighten Orphan's Tomorrow</h1>
+
+    <!-- Donation Amount Section -->
+    <div class="donation-options">
+      <button onclick="selectAmount(10)">$10</button>
+      <button onclick="selectAmount(20)">$20</button>
+      <button onclick="selectAmount(50)">$50</button>
+      <button onclick="selectAmount(100)">$100</button>
+      <input type="number" id="customAmount" placeholder="Enter Other Amount" oninput="updateAmount()">
+    </div>
+
+    <div class="selected-amount" id="selectedAmountDisplay">Selected Amount: $0</div>
+
+    <!-- Billing Details Section -->
+    <form id="donationForm">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email address" required>
+      </div>
+
+      <!-- Payment Options -->
+      <div class="payment-options">
+        <label>Select Payment Method:</label>
+        <select id="paymentMethod" onchange="togglePaymentFields()">
+          <option value="none">-- Select --</option>
+          <option value="card">Credit/Debit Card</option>
+        </select>
+      </div>
+
+      <!-- Credit Card Fields -->
+      <div class="credit-card">
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16">
+        </div>
+
+        <div class="form-group">
+          <label for="expiryDate">Expiry Date</label>
+          <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5">
+        </div>
+
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="123" maxlength="3">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit">Submit Donation</button>
+    </form>
+  </div>
+
+  <script>
+    let selectedAmount = 0;
+
+    function selectAmount(amount) {
+      selectedAmount = amount;
+      document.getElementById('customAmount').value = '';
+      updateSelectedAmountDisplay();
+    }
+
+    function updateAmount() {
+      const customAmount = document.getElementById('customAmount').value;
+      selectedAmount = customAmount ? parseFloat(customAmount) : 0;
+      updateSelectedAmountDisplay();
+    }
+
+    function updateSelectedAmountDisplay() {
+      const display = document.getElementById('selectedAmountDisplay');
+      display.textContent = `Selected Amount: $${selectedAmount}`;
+    }
+
+    function togglePaymentFields() {
+      const paymentMethod = document.getElementById('paymentMethod').value;
+      const creditCardSection = document.querySelector('.credit-card');
+
+      if (paymentMethod === 'card') {
+        creditCardSection.style.display = 'block';
+      } else {
+        creditCardSection.style.display = 'none';
+      }
+    }
+
+    document.getElementById('donationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (selectedAmount <= 0) {
+        alert('Please select or enter a valid donation amount.');
+        return;
+      }
+      alert('Work in progress... Thank you for your patience.');
+    });
+  </script>
+  </section>
+</body>
+</html>
